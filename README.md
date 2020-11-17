@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Using the design files
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this download, we provide both Sketch and Figma versions of the design. This means you can choose which design tool you prefer to use. You can also import the Sketch file into Adobe XD, if you prefer to use that. We provide information on how to do this below.
 
-## Available Scripts
+Using these design files will help you practice building projects in the same way professionals do. Seeing the details in the design will help you improve your accuracy when building projects and build projects faster.
+ 
+## Sketch
 
-In the project directory, you can run:
+[Sketch](https://www.sketch.com/) is a popular design tool, but it requires a license and macOS in order to use it. If you've got both, the Sketch file will be a great option for you.
 
-### `yarn start`
+## Figma
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Figma](https://www.figma.com/) is another extremely popular design tool that has a generous free tier and can also be used on both Windows and Mac computers.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To get started with Figma, [download the correct app for your operating system](https://www.figma.com/downloads/). You can then open the app and open the `.fig` design file by dragging it over the app and dropping it into the projects home screen.
 
-### `yarn test`
+If you're going to use the Desktop App, you don't need to download the Font Installer from the downloads page. But if you're planning on using the Figma web app you should download and install it to ensure the fonts show up correctly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you haven't used Figma before, we strongly recommend reading this [“Everything Developers Need To Know About Figma” article on Smashing Magazine](https://www.smashingmagazine.com/2020/09/figma-developers-guide/) to help you get up to speed.
 
-### `yarn build`
+## Adobe XD
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We don't include XD files in the download, but if you want to use it you can import the Sketch file into Adobe XD very easily. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It's worth noting that there can be rendering issues when importing Sketch files into XD, so we strongly recommend using either Sketch or Figma to view the designs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you do want to get started with XD though, [head over to the downloads page and choose the free version](https://www.adobe.com/uk/products/xd/pricing/individual.html). Once you’ve downloaded and opened the app, go to File > Open from Your Computer and then find the challenge Sketch file on your computer and open it up. Once that’s done, you’ll be able to dive into the design on Adobe XD!
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We hope you enjoy the challenge! 🙂
