@@ -1,0 +1,41 @@
+@import '../abstracts/variables';
+
+.primary-btn,
+.secondary-btn {
+    width: 141px;
+    height: 48px;
+    border-radius: 7px;
+    border: none;
+}
+
+.primary-btn {
+    background-color: $violet;
+    color: $white;
+
+    &:hover {
+        background-color: $midViolet;
+    }
+}
+
+.secondary-btn {
+    background-color: $paleViolet;
+    color: $violet;
+
+    &:hover {
+        background-color: $lightViolet;
+    }
+}
+
+/* Dark theme buttons */
+.dark-btn {
+    width: 141px;
+    height: 48px;
+    border-radius: 7px;
+    border: none;
+    background-color: #303642;
+    color: $white;
+
+    &:hover {
+        background-color: #696e76;
+    }
+}

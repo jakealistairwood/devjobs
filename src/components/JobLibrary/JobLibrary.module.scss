@@ -1,0 +1,10 @@
+@import '../../assets/styles/abstracts/variables';
+@import '../../assets/styles/main';
+
+.library__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 1em;
+    width: 100%;
+    margin-top: 50px;
+}

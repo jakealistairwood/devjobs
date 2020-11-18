@@ -1,0 +1,29 @@
+@import './assets/styles/main';
+@import './assets/styles/abstracts/variables';
+
+html {
+    height: 100%;
+}
+
+.navbar {
+    position: relative;
+    height: 16vh;
+    width: 100%;
+    background-color: $midnight;
+    background-image: url('./assets/design/Desktop/bg-pattern-header.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    .navbar__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $white;
+        font-family: $primaryFont;
+        height: 10vh;
+        width: 80%;
+        margin: 0 auto;
+        
+    }
+}
