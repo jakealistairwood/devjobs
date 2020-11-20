@@ -1,0 +1,67 @@
+@import '../../assets/styles/main';
+@import '../../assets/styles/abstracts/variables';
+
+.pageContainer {
+    width: 70%;
+    margin: 0 auto;
+
+    .jobHeader {
+        position: absolute;
+        top: 11vh;
+        height: 20vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 56%;
+        margin: 0 auto;
+        background-color: white;
+    
+        .headerImg {
+            width: 20%;
+            height: 100%;
+            background-color: palevioletred;
+        }
+    
+        .headerContent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            padding: 50px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .jobDescription {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin-top: 200px;
+        padding: 50px;
+
+        .overviewHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 50px;
+
+            .overviewHeaderInfo {
+                h2 {
+                    margin: 10px 0;
+                }
+                
+                .jobLocations {
+                    color: $violet;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

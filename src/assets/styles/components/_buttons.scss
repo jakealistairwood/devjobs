@@ -1,14 +1,14 @@
 @import '../abstracts/variables';
 
-.primary-btn,
-.secondary-btn {
+.primaryBtn,
+.secondaryBtn {
     width: 141px;
     height: 48px;
     border-radius: 7px;
     border: none;
 }
 
-.primary-btn {
+.primaryBtn {
     background-color: $violet;
     color: $white;
 
@@ -17,7 +17,7 @@
     }
 }
 
-.secondary-btn {
+.secondaryBtn {
     background-color: $paleViolet;
     color: $violet;
 
@@ -27,7 +27,7 @@
 }
 
 /* Dark theme buttons */
-.dark-btn {
+.darkBtn {
     width: 141px;
     height: 48px;
     border-radius: 7px;

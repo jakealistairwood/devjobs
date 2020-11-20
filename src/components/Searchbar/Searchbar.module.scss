@@ -1,0 +1,74 @@
+@import '../../assets/styles/main';
+@import '../../assets/styles/abstracts/variables';
+
+.search {
+    position: absolute;
+    top: 11vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 80%;
+    background-color: $white;
+    border-radius: 6px;
+
+    .search__filterOne {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        padding: 10px;
+        border-right: 1px solid #e2e6ea;
+        height: 100%;
+
+        img {
+            padding: 0 20px;
+        }
+
+        input { 
+            border: none;
+            outline: none;
+            width: 80%;
+            height: 30px;
+            font-family: $primaryFont;
+        }
+    }
+
+    .search__filterTwo {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        border-right: 1px solid #e2e6ea;
+        height: 100%;
+
+        img {
+            padding: 0 20px;
+        }
+
+        input { 
+            border: none;
+            outline: none;
+            width: 80%;
+            height: 30px;
+            font-family: $primaryFont;
+        }
+    }
+
+    .search__filterThree {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 30%;
+
+        input {
+            height: 20px;
+            width: 20px;
+            background-color: #e7e8e9;
+            border: none;
+        }
+
+        label {
+            font-weight: 700;
+        }
+    }
+}

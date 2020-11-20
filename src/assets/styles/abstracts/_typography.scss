@@ -29,3 +29,9 @@ p {
     font-size: 16px;
     font-family: $primaryFont;
 }
+
+input { 
+    font-family: $primaryFont;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}

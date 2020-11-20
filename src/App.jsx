@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import JobLibrary from './components/JobLibrary/index';
+import Routes from './containers/Routes';
 import NavbarBanner from './assets/design/Desktop/bg-pattern-header.svg';
+import Logo from './assets/design/Desktop/logo.svg';
 import './App.scss';
 
 const App = () => {
@@ -27,17 +29,19 @@ const App = () => {
     getJobs();
   }, []);
 
+  const renderJobs = jobs ? <Routes jobs={jobs} /> : <div>Loading ...</div>
+
   return (
     <>
     <header className="navbar">
       <nav className="navbar__container">
-        <p>devjobs</p>
+        <img src={Logo} alt="devjobs-logo" />
         <div className="navbar__toggle-btn">
         </div>
       </nav>
     </header>
     <main className="page__container">
-      <JobLibrary jobs={jobs} />  
+      {renderJobs}
     </main>
     </>
   )

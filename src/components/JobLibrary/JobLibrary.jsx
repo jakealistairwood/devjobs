@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './JobLibrary.module.scss';
 import JobCard from '../JobCard';
+import Searchbar from '../Searchbar';
 
 const JobLibrary = (props) => {
 
@@ -12,9 +13,12 @@ const JobLibrary = (props) => {
     )
     
     return (
+        <>
+        <Searchbar />
         <div className={styles.library__grid}>
             {jobs.map(renderJobCards)}
         </div>
+        </>
     )
 }
 
