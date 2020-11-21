@@ -1,0 +1,68 @@
+@import '../../assets/styles/main';
+@import '../../assets/styles/abstracts/variables';
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 84vh;
+
+    @media only screen and (max-width: 500px) {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .heroImg {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 60%;
+
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+        }
+
+        img { 
+            width: 80%;
+            margin: 0 auto; 
+        }
+    }
+
+    .heroContent { 
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+
+            @media only screen and (max-width: 500px) {
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        p {
+            color: $darkGrey;
+            line-height: 30px;
+            letter-spacing: 0.05em;
+            margin: 10px 0;
+
+            @media only screen and (max-width: 500px) {
+                font-size: 0.8rem;
+                line-height: 25px;
+                margin: 5px 0;
+            }
+        }
+
+        button { 
+            margin-top: 10px;
+        }
+    }
+}

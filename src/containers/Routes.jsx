@@ -3,15 +3,33 @@ import { Router } from '@reach/router';
 import JobInfo from '../components/JobInfo';
 import JobLibrary from '../components/JobLibrary';
 import Searchbar from '../components/Searchbar';
+import Home from '../containers/Home';
 
 const Routes = (props) => {
 
-    const { jobs } = props;
+    const { jobs, 
+            getJobs, 
+            searchJobs, 
+            setSearchJobs, 
+            jobLocation, 
+            setJobLocation,
+            fullTime,
+            setFullTime } = props;
 
     return (
         <Router>
-            <JobLibrary path="/" jobs={jobs} />
-            <JobInfo path="job-description/:id" jobs={jobs}/>    
+            <Home path="/" />
+            <JobLibrary path="job-library" 
+                        getJobs={getJobs} 
+                        jobs={jobs} 
+                        searchJobs={searchJobs} 
+                        setSearchJobs={setSearchJobs}
+                        jobLocation={jobLocation}
+                        setJobLocation={setJobLocation}
+                        fullTime={fullTime}
+                        setFullTime={setFullTime}
+            />
+            <JobInfo path="job-library/job-description/:jobID" jobs={jobs}/>    
         </Router>
     )
 }

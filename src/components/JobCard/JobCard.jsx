@@ -8,13 +8,12 @@ const JobCard = (props) => {
 
     console.log(job);
 
-    console.log(job.id);
+    console.log(props.job.id);
+
+    const jobID = props.job.id;
 
     return (
-        <Link to={{
-            pathname: 'job-description',
-            state: { id: job.id}
-        }}>
+        <Link to={`job-description/${jobID}`}>
         <div className={styles.card}>
             <div className={styles.card__logo}>
                 <img src={job.company_logo} alt="logo-of-company" />            

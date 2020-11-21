@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './JobInfo.module.scss';
 
-const JobInfo = () => {
+const JobInfo = (props) => {
+
+    const [ currentJob, setCurrentJob ] = useState(0);
+
+    useEffect(() => {
+        setCurrentJob(props.jobID);
+    }, [props.jobID])
+
+    console.log(props.jobID);
+
     return (
         <div className={styles.pageContainer}>
             <header className={styles.jobHeader}>
@@ -10,7 +19,7 @@ const JobInfo = () => {
                 </div>
                 <div className={styles.headerContent}>
                     <div>
-                        <h3>So Digital Inc.</h3>
+                        <h3>So Digital</h3>
                         <p>sodigital.co</p>
                     </div>
                     <button className={styles.secondaryBtn}>Company Site</button>
