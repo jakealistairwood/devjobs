@@ -15,9 +15,9 @@ const App = () => {
 
   const getJobs = () => {
 
-    const searchByJobDescription = searchJobs ? `&description=${searchJobs}` : "";
-    const searchByJobLocation = jobLocation ? `&location=${jobLocation}` : "";
-    const jobFullTime = fullTime ? `&full_time=${fullTime}` : "";
+    const searchByJobDescription = searchJobs ? `?description=${searchJobs}` : "";
+    const searchByJobLocation = jobLocation ? `?location=${jobLocation}` : "";
+    const jobFullTime = fullTime ? `?full_time=${fullTime}` : "";
 
     const url = `https://jobs.github.com/positions.json${searchByJobDescription}${searchByJobLocation}${jobFullTime}`;
 

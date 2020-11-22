@@ -14,9 +14,12 @@ const Home = () => {
                 <p>Devjobs is the ultimate resource you need to find that dream tech job you've always been looking for!</p>
                 <p>Break those barriers and reach your potential. Just click the button below to gain access to the most 
                     in demand jobs out there in the market today.</p>
-                <Link to="job-library">
-                <button className={styles.primaryBtn}>Enter now</button>
-                </Link>
+                <div className={styles.btnContainer}>
+                    <Link to="job-library">
+                    <button className={styles.primaryBtn}>Enter now</button>
+                    </Link>
+                    <button className={styles.secondaryBtn}>Sign up</button>
+                </div>
             </div>
         </main>
     )

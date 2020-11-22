@@ -6,14 +6,10 @@ const JobCard = (props) => {
 
     const { job } = props;
 
-    console.log(job);
-
-    console.log(props.job.id);
-
     const jobID = props.job.id;
 
     return (
-        <Link to={`job-description/${jobID}`}>
+        <Link to={`job-description/${jobID}`} job={job} >
         <div className={styles.card}>
             <div className={styles.card__logo}>
                 <img src={job.company_logo} alt="logo-of-company" />            

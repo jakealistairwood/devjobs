@@ -16,7 +16,7 @@ const JobLibrary = (props) => {
 
 
     const renderJobCards = (job) => (
-        <JobCard job={job} />
+        <JobCard job={job} key={job.id} />
     )
 
     return (
