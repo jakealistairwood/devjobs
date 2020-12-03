@@ -12,7 +12,8 @@ const JobLibrary = (props) => {
             jobLocation, 
             setJobLocation,
             fullTime,
-            setFullTime } = props;
+            setFullTime,
+        } = props;
 
 
     const renderJobCards = (job) => (

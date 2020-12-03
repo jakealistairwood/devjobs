@@ -14,7 +14,8 @@ const Routes = (props) => {
             jobLocation, 
             setJobLocation,
             fullTime,
-            setFullTime } = props;
+            setFullTime,
+        } = props;
 
     return (
         <Router>
