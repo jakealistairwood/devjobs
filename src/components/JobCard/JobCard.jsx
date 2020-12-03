@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './JobCard.module.scss';
 import { Link } from '@reach/router';
+import  styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from "../../themes";
 
 const JobCard = (props) => {
 
@@ -8,8 +10,13 @@ const JobCard = (props) => {
 
     const jobID = props.job.id;
 
+    const StyledCard = styled.div`
+        background-color: ${props => props.theme.cardBg}
+    `
+
     return (
             <Link to={`job-description/${jobID}`} job={job} >
+            <StyledCard>
             <div className={styles.card}>
                 <div className={styles.card__logo}>
                     <img src={job.company_logo} alt="logo-of-company" />            
@@ -25,6 +32,7 @@ const JobCard = (props) => {
                     <p className={styles.card__jobLocation}>{job.location}</p>    
                 </div>    
             </div>
+            </StyledCard>
             </Link>
     )
 }

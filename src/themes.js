@@ -27,8 +27,4 @@ export const GlobalStyles = createGlobalStyle`
     p {
         color: ${props => props.theme.p}
     }
-
-    .card {
-        background-color: ${props => props.theme.cardBg}
-    }
 `
