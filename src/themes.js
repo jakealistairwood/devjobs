@@ -8,7 +8,9 @@ export const lightTheme = {
     searchComponent: '#FFF',
     form: '#FFF',
     inputText: '#FFF',
-    ftLabel: '#000'
+    ftLabel: '#000',
+    registerLabel: '#000',
+    registerInput: '#000'
 }
 
 export const darkTheme = {
@@ -19,7 +21,9 @@ export const darkTheme = {
     searchComponent: '#19202D',
     form: '#19202D',
     inputText: '#19202D',
-    ftLabel: '#FFF'
+    ftLabel: '#FFF',
+    registerLabel: '#6E8098',
+    registerInput: '#FFF'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -42,5 +46,13 @@ export const GlobalStyles = createGlobalStyle`
 
     input[type="text"] {
         background-color: ${props => props.theme.inputText}
+    }
+
+    input[type="password"] {
+        background-color: ${props => props.theme.inputText}
+    }
+
+    ::placeholder {
+        color: ${props => props.theme.placeholder}
     }
 `

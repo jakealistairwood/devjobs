@@ -22,7 +22,7 @@ const Home = () => {
                 <p>Break those barriers and reach your potential. Just click the button below to gain access to the most 
                     in demand jobs out there in the market today.</p>
                 <div className={styles.btnContainer}>
-                    <Link to="job-library">
+                    <Link to="register">
                     <button className={styles.primaryBtn}>Enter now</button>
                     </Link>
                     <button className={styles.secondaryBtn} onClick={googleSignIn}>Sign In</button>

@@ -23,8 +23,6 @@ const Searchbar = (props) => {
     `
 
     return (
-        
-        // <form className={styles.search}>
         <StyledSearch className={styles.search}>
             <div className={styles.search__filterOne}>
                 <img src={SearchIcon} alt="magnifying-glass-icon" />
@@ -60,7 +58,6 @@ const Searchbar = (props) => {
                 <button className={styles.primaryBtn}>Search</button>
             </div>   
         </StyledSearch>   
-        // </form>
     )
 }
 

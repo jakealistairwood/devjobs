@@ -1,0 +1,27 @@
+@import '../../assets/styles/main';
+@import '../../assets/styles/abstracts/variables';
+
+.formContainer {
+    .registerForm {
+        height: 55vh;
+
+        label {
+            margin: 20px 0;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        .formBtns {
+
+            a {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
