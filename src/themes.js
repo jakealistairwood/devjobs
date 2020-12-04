@@ -4,14 +4,22 @@ export const lightTheme = {
     body: '#F4F6F8',
     fontColor: '#6E8098',
     h3: '#121721',
-    cardBg: '#FFF'
+    cardBg: '#FFF',
+    searchComponent: '#FFF',
+    form: '#FFF',
+    inputText: '#FFF',
+    ftLabel: '#000'
 }
 
 export const darkTheme = {
     body: '#121721',
     fontColor: '#6E8098',
     h3: '#FFF',
-    cardBg: '#19202D'
+    cardBg: '#19202D',
+    searchComponent: '#19202D',
+    form: '#19202D',
+    inputText: '#19202D',
+    ftLabel: '#FFF'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -26,5 +34,13 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
         color: ${props => props.theme.p}
+    }
+
+    form {
+        background-color: ${props => props.theme.form}
+    }
+
+    input[type="text"] {
+        background-color: ${props => props.theme.inputText}
     }
 `

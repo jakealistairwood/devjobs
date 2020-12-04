@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Searchbar.module.scss';
 import SearchIcon from '../../assets/design/Desktop/icon-search.svg';
 import FilterIcon from '../../assets/design/Desktop/icon-location.svg';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from "../../themes";
 
 const Searchbar = (props) => {
 
@@ -13,8 +15,17 @@ const Searchbar = (props) => {
             fullTime,
             setFullTime } = props;
 
+    const StyledSearch = styled.form`
+        background-color: ${props => props.theme.form}
+    `
+    const StyledLabel = styled.label`
+        color: ${props => props.theme.ftLabel}
+    `
+
     return (
-        <form className={styles.search}>
+        
+        // <form className={styles.search}>
+        <StyledSearch className={styles.search}>
             <div className={styles.search__filterOne}>
                 <img src={SearchIcon} alt="magnifying-glass-icon" />
                 <label for="searchByJob"></label>
@@ -41,14 +52,15 @@ const Searchbar = (props) => {
                 />
             </div>  
             <div className={styles.search__filterThree}>
-                <input type="checkbox" onClick={() => {
+                <input type="checkbox" id="fullTimeCheckbox" onClick={() => {
                     setFullTime(!fullTime)
                     getJobs();
                 }} />
-                <label for="">Full Time Only</label>
+                <StyledLabel for="fullTimeCheckbox" className={styles.fullTimeLabel}>Full Time Only</StyledLabel>
                 <button className={styles.primaryBtn}>Search</button>
-            </div>      
-        </form>
+            </div>   
+        </StyledSearch>   
+        // </form>
     )
 }
 
