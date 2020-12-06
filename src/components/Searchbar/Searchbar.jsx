@@ -5,6 +5,13 @@ import FilterIcon from '../../assets/design/Desktop/icon-location.svg';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from "../../themes";
 
+const StyledSearch = styled.form`
+    background-color: ${props => props.theme.form}
+`
+const StyledLabel = styled.label`
+    color: ${props => props.theme.ftLabel}
+`
+
 const Searchbar = (props) => {
 
     const { getJobs,  
@@ -15,13 +22,6 @@ const Searchbar = (props) => {
             fullTime,
             setFullTime } = props;
 
-    const StyledSearch = styled.form`
-        background-color: ${props => props.theme.form}
-    `
-    const StyledLabel = styled.label`
-        color: ${props => props.theme.ftLabel}
-    `
-
     return (
         <StyledSearch className={styles.search}>
             <div className={styles.search__filterOne}>
@@ -31,7 +31,8 @@ const Searchbar = (props) => {
                     type="text" 
                     id="searchByJob" 
                     placeholder="Filter by title, companies, expertise..."
-                    onChange={e => {
+                    value={searchJobs}
+                    onChange={(e) => {
                         setSearchJobs(e.target.value);
                         getJobs();
                     }} 
@@ -43,7 +44,8 @@ const Searchbar = (props) => {
                 <input type="text" 
                        id="searchByLocation" 
                        placeholder="Filter by location..."
-                       onInput={e => {
+                       value={jobLocation}
+                       onChange={(e) => {
                            setJobLocation(e.target.value)
                            getJobs();
                        }}

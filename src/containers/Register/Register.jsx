@@ -17,12 +17,12 @@ const Register = () => {
         <div className={styles.formContainer}>
             <form className={styles.registerForm}>
                 <h3>Register With Us</h3>
-                <StyledLabel for="">Username</StyledLabel>
-                <StyledInput type="text" id="" placeholder="Enter username" />   
+                <StyledLabel for="">First Name</StyledLabel>
+                <StyledInput type="text" id="" placeholder="Please enter your first name..." />   
                 <StyledLabel for="">Email</StyledLabel>
-                <StyledInput type="text" id="" placeholder="Enter email" />   
+                <StyledInput type="text" id="" placeholder="Please enter your email..." />   
                 <StyledLabel for="">Password</StyledLabel>
-                <StyledInput type="password" id="userPassword" placeholder="Enter password" />   
+                <StyledInput type="password" id="userPassword" placeholder="Please enter your password..." />   
                 <StyledLabel for="">Confirm Password</StyledLabel>
                 <StyledInput type="password" id="userPasswordConfirm" placeholder="Confirm your password" />
                 <div className={styles.formBtns}>

@@ -3,8 +3,6 @@
 
 .formContainer {
     .registerForm {
-        height: 55vh;
-
         label {
             margin: 20px 0;
         }
@@ -13,7 +11,13 @@
             margin-bottom: 20px;
         }
 
+        .errorMessage {
+            color: red;
+            font-size: 0.6rem;
+        }
+
         .formBtns {
+            margin-top: 30px;
 
             a {
                 width: 100%;

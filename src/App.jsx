@@ -12,14 +12,27 @@ import Switch from './components/Switch';
 
 const App = () => {
 
+  // Styled Component 
   const StyledApp = styled.div`
   `
 
+  /* =============================================
+                       State  
+  ============================================== */
+
+  // State change for API data inc. search functionality 
   const [ jobs, setJobs ] = useState([]);
-  const [ user, setUser ] = useState(null);
   const [ searchJobs, setSearchJobs ] = useState();
   const [ jobLocation, setJobLocation ] = useState();
   const [ fullTime, setFullTime ] = useState(false);
+
+  // State change for user authentication 
+  const [ user, setUser ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
+  const [ userEmailError, setUserEmailError ] = useState("");
+  const [ userPasswordError, setUserPasswordError ] = useState(""); 
+  const [ userHasAccount, setUserHasAccount ] = useState(false);
 
   // State for light/dark mode toggle button
   const [ isToggled, setIsToggled ] = useState(false);
@@ -31,6 +44,76 @@ const App = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   }
 
+  /* =============================================
+                 User Authentication
+  ============================================== */
+
+  // Clear Inputs
+
+  const clearInputs = () => {
+    setEmail('');
+    setPassword('');
+  }
+
+  // Clear Errors
+
+  const clearErrors = () => {
+    setUserEmailError('');
+    setUserPasswordError('');
+  }
+
+  // Login functionality
+  const handleUserLogin = () => {
+    clearErrors()
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+      switch(error.code) {
+        case "auth/invalid-email":
+        case "auth/user-disabled":
+        case "auth/user-not-found":
+          setUserEmailError(error.message);
+          break;
+        case "auth/wrong-password": 
+          setUserPasswordError(error.message);
+          break;
+      }
+    })
+  }
+
+  // Signup functionality 
+  const handleUserSignUp = () => {
+    clearErrors();
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(error => {
+      switch(error.code) {
+        case "auth/email-provided-already-in-use":
+        case "auth/email-invalid-try-again":
+          setUserEmailError(error.message);
+          break;
+        case "auth/weak-password": 
+          setUserPasswordError(error.message);
+          break;
+      }  
+    })
+  }
+
+  // Logout functionality 
+
+  const handleUserLogOut = () => {
+    firebase.auth().signOut();
+  }
+
+  // Check user exists functionality
+
+  const checkUserExists = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      clearInputs();
+      (user) ? setUser(user) : setUser("");
+    })  
+  }
+
+  /* =============================================
+                    Fetch API Data  
+  ============================================== */
+  // Get API Data functionality
   const getJobs = () => {
 
     const searchByJobDescription = searchJobs ? `?description=${searchJobs}` : "";
@@ -51,21 +134,9 @@ const App = () => {
       .catch(() => console.log("Can't access " + url + " response. Blocked by browser?"))
   }
 
-  const checkUserSignedIn = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      (user) 
-      ? 
-        setUser(user)
-      : 
-        setUser(null);
-    })
-  }
-
-  console.log(user);
-
   useEffect(() => {
     getJobs();
-    checkUserSignedIn();
+    checkUserExists();
   }, []);
 
   const renderJobs = jobs 
@@ -77,6 +148,17 @@ const App = () => {
             setJobLocation={setJobLocation}
             fullTime={fullTime}
             setFullTime={setFullTime}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleUserLogin={handleUserLogin}
+            handleUserSignUp={handleUserSignUp}
+            checkUserExists={checkUserExists}
+            userHasAccount={userHasAccount}
+            setUserHasAccount={setUserHasAccount}
+            userEmailError={userEmailError}
+            userPasswordError={userPasswordError}
     /> 
   : <div className="loadingScreen">Loading ...</div>
 

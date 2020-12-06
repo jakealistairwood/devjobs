@@ -1,15 +1,9 @@
 import React from 'react';
 import styles from './Home.module.scss';
-import { Link, navigate } from '@reach/router';
+import { Link } from '@reach/router';
 import HeroImg from '../../assets/design/Desktop/undraw_breaking_barriers.svg';
-import firebase, { provider } from "../../firebase";
 
 const Home = () => {
-
-    const googleSignIn = async() => {
-        await firebase.auth().signInWithRedirect(provider)
-        navigate("/job-library");
-    }
 
     return (
         <main className={styles.hero}>
@@ -23,9 +17,11 @@ const Home = () => {
                     in demand jobs out there in the market today.</p>
                 <div className={styles.btnContainer}>
                     <Link to="register">
-                    <button className={styles.primaryBtn}>Enter now</button>
+                    <button className={styles.primaryBtn}>Sign Up</button>
                     </Link>
-                    <button className={styles.secondaryBtn} onClick={googleSignIn}>Sign In</button>
+                    <Link to="login">
+                    <button className={styles.secondaryBtn}>Login</button>
+                    </Link>
                 </div>
             </div>
         </main>
