@@ -10,11 +10,11 @@ import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./themes";
 import Switch from './components/Switch';
 
-const App = () => {
+// Styled Component 
+const StyledApp = styled.div`
+`
 
-  // Styled Component 
-  const StyledApp = styled.div`
-  `
+const App = () => {
 
   /* =============================================
                        State  
@@ -28,6 +28,7 @@ const App = () => {
 
   // State change for user authentication 
   const [ user, setUser ] = useState("");
+  const [ firstName, setFirstName ] = useState("");
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ userEmailError, setUserEmailError ] = useState("");
@@ -104,9 +105,13 @@ const App = () => {
   // Check user exists functionality
 
   const checkUserExists = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      clearInputs();
-      (user) ? setUser(user) : setUser("");
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        clearInputs();
+        setUser(user);
+      } else {
+        setUser("");
+      }
     })  
   }
 
@@ -148,6 +153,8 @@ const App = () => {
             setJobLocation={setJobLocation}
             fullTime={fullTime}
             setFullTime={setFullTime}
+            firstName={firstName}
+            setFirstName={setFirstName}
             email={email}
             setEmail={setEmail}
             password={password}

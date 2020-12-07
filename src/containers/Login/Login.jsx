@@ -52,9 +52,15 @@ const Login = (props) => {
                 />
                 <p className={styles.errorMessage}>{userPasswordError}</p>
                 <div className={styles.formBtns}>
-                    <Link to="/job-library">
-                    <button className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
-                    </Link>
+                    {userHasAccount ? (
+                        <Link to="/job-library">
+                        <button className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
+                        </Link>
+                    ) : (
+                        <Link to="/login">
+                        <button className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
+                        </Link>
+                    )}
                 </div>
             </form>
         </div>

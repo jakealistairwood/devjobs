@@ -17,6 +17,8 @@ const Routes = (props) => {
             setJobLocation,
             fullTime,
             setFullTime,
+            firstName,
+            setFirstName,
             email,
             setEmail,
             password,
@@ -33,7 +35,19 @@ const Routes = (props) => {
     return (
         <Router>
             <Home path="/" />
-            <Register path="register" />
+            <Register 
+                path="register"
+                firstName={firstName}
+                setFirstName={setFirstName}
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword} 
+                handleUserSignUp={handleUserSignUp}
+                checkUserExists={checkUserExists}
+                userEmailError={userEmailError}
+                userPasswordError={userPasswordError}
+            />
             <Login 
                 path="login"
                 email={email}
@@ -41,7 +55,6 @@ const Routes = (props) => {
                 password={password}
                 setPassword={setPassword}
                 handleUserLogin={handleUserLogin}
-                handleUserSignUp={handleUserSignUp}
                 checkUserExists={checkUserExists}
                 userHasAccount={userHasAccount}
                 setUserHasAccount={setUserHasAccount}

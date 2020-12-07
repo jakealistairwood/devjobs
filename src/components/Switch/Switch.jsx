@@ -8,7 +8,7 @@ const Switch = (props) => {
     const { isToggled, onToggle, toggleTheme } = props;
 
     return (
-        <div class={styles.toggleContainer}>
+        <div className={styles.toggleContainer}>
             <img src={SunIcon} />
             <label id="toggleSwitch" className={styles.themeSwitch}>
                 <input type="checkbox" id="toggleSwitch" checked={isToggled} onChange={() =>{
