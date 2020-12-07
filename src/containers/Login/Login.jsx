@@ -28,7 +28,7 @@ const Login = (props) => {
 
     return (
         <div className={styles.formContainer}>
-            <form className={styles.registerForm}>
+            <form className={styles.registerForm} onSubmit={handleUserLogin}>
                 <h3>Have an account? Login below!</h3>
                 <StyledLabel htmlFor="userEmail">Email</StyledLabel>
                 <StyledInput 
@@ -52,15 +52,7 @@ const Login = (props) => {
                 />
                 <p className={styles.errorMessage}>{userPasswordError}</p>
                 <div className={styles.formBtns}>
-                    {userHasAccount ? (
-                        <Link to="/job-library">
-                        <button type="submit" className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
-                        </Link>
-                    ) : (
-                        <Link to="/login">
-                        <button type="submit" className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
-                        </Link>
-                    )}
+                    <button type="submit" className={styles.primaryBtn}>Login</button>
                 </div>
             </form>
         </div>

@@ -28,7 +28,7 @@ const Register = (props) => {
 
     return (
         <div className={styles.formContainer}>
-            <form className={styles.registerForm}>
+            <form className={styles.registerForm} onSubmit={handleUserSignUp}>
                 <h3>Register With Us</h3>
                 <StyledLabel htmlFor="userFirstName">First Name(optional)</StyledLabel>
                 <StyledInput 
@@ -65,15 +65,7 @@ const Register = (props) => {
                 />
                 <p className={styles.errorMessage}>{userPasswordError}</p>  
                 <div className={styles.formBtns}>
-                    {userHasAccount ? (
-                        <Link to="/job-library">
-                        <button type="submit" className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
-                        </Link>
-                    ) : (
-                        <Link to="/register">
-                        <button type="submit" className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
-                        </Link>
-                    )}
+                    <button type="submit" className={styles.primaryBtn}>Sign Up</button>
                     <Link to="/login">
                     <button className={styles.secondaryBtn}>Login</button>
                     </Link>

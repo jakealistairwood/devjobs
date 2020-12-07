@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import JobLibrary from './components/JobLibrary/index';
 import Routes from './containers/Routes';
-import { Link } from '@reach/router';
+import { Link, navigate }from '@reach/router';
 import firebase from './firebase';
 import NavbarBanner from './assets/design/Desktop/bg-pattern-header.svg';
 import Logo from './assets/design/Desktop/logo.svg';
@@ -81,6 +81,7 @@ const App = () => {
           break;
       }
     })
+    navigate("/job-library")
   }
 
   // Signup functionality 
@@ -97,6 +98,7 @@ const App = () => {
           break;
       }  
     })
+    navigate("/job-library")
   }
 
   // Logout functionality 
