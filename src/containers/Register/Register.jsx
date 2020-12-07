@@ -30,34 +30,33 @@ const Register = (props) => {
         <div className={styles.formContainer}>
             <form className={styles.registerForm}>
                 <h3>Register With Us</h3>
-                <StyledLabel for="userFirstName">First Name(optional)</StyledLabel>
+                <StyledLabel htmlFor="userFirstName">First Name(optional)</StyledLabel>
                 <StyledInput 
                     type="text" 
                     id="userFirstName" 
                     name="user-name"
-                    key="userFirstName"
+                    autoFocus
                     placeholder="Please enter your first name..."
                     value={firstName}
                     onChange={(e) => {
                         setFirstName(e.target.value)
                     }} 
                 />   
-                <StyledLabel for="userEmail">Email</StyledLabel>
+                <StyledLabel htmlFor="userEmail">Email</StyledLabel>
                 <StyledInput 
                     type="text" 
-                    id="userEmailRegister"
+                    id="userEmail"
                     name="user-email" 
                     placeholder="Please enter your email..."
-                    autoFocus
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <p className={styles.errorMessage}>{userEmailError}</p>   
-                <StyledLabel for="userPassword">Password</StyledLabel>
+                <StyledLabel htmlFor="userPassword">Password</StyledLabel>
                 <StyledInput 
                     type="password" 
-                    id="userPasswordRegister" 
+                    id="userPassword" 
                     name="user-password"
                     placeholder="Please enter your password..."
                     required
@@ -68,11 +67,11 @@ const Register = (props) => {
                 <div className={styles.formBtns}>
                     {userHasAccount ? (
                         <Link to="/job-library">
-                        <button className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
+                        <button type="submit" className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
                         </Link>
                     ) : (
                         <Link to="/register">
-                        <button className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
+                        <button type="submit" className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
                         </Link>
                     )}
                     <Link to="/login">

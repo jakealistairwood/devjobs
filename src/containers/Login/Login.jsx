@@ -30,7 +30,7 @@ const Login = (props) => {
         <div className={styles.formContainer}>
             <form className={styles.registerForm}>
                 <h3>Have an account? Login below!</h3>
-                <StyledLabel for="userEmail">Email</StyledLabel>
+                <StyledLabel htmlFor="userEmail">Email</StyledLabel>
                 <StyledInput 
                     type="text" 
                     autoFocus 
@@ -41,7 +41,7 @@ const Login = (props) => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <p className={styles.errorMessage}>{userEmailError}</p>
-                <StyledLabel for="userPassword">Password</StyledLabel>
+                <StyledLabel htmlFor="userPassword">Password</StyledLabel>
                 <StyledInput 
                     type="password" 
                     id="userPassword" 
@@ -54,11 +54,11 @@ const Login = (props) => {
                 <div className={styles.formBtns}>
                     {userHasAccount ? (
                         <Link to="/job-library">
-                        <button className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
+                        <button type="submit" className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
                         </Link>
                     ) : (
                         <Link to="/login">
-                        <button className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
+                        <button type="submit" className={styles.primaryBtn} onClick={handleUserLogin}>Login</button>
                         </Link>
                     )}
                 </div>
