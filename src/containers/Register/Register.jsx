@@ -21,6 +21,7 @@ const Register = (props) => {
             password,
             setPassword,
             handleUserSignUp, 
+            userHasAccount,
             userEmailError, 
             userPasswordError 
         } = props;
@@ -39,7 +40,6 @@ const Register = (props) => {
                     value={firstName}
                     onChange={(e) => {
                         setFirstName(e.target.value)
-                        console.log(e.target.value)
                     }} 
                 />   
                 <StyledLabel for="userEmail">Email</StyledLabel>
@@ -66,9 +66,15 @@ const Register = (props) => {
                 />
                 <p className={styles.errorMessage}>{userPasswordError}</p>  
                 <div className={styles.formBtns}>
-                    <Link to="/job-library">
-                    <button className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
-                    </Link>
+                    {userHasAccount ? (
+                        <Link to="/job-library">
+                        <button className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
+                        </Link>
+                    ) : (
+                        <Link to="/register">
+                        <button className={styles.primaryBtn} onClick={handleUserSignUp}>Sign Up</button>
+                        </Link>
+                    )}
                     <Link to="/login">
                     <button className={styles.secondaryBtn}>Login</button>
                     </Link>

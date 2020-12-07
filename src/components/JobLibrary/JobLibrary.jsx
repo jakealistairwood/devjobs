@@ -5,8 +5,14 @@ import Searchbar from '../Searchbar';
 
 const JobLibrary = (props) => {
 
+    const renderMoreJobs = () => {
+        setJobsOnDisplay((previousJobs) => previousJobs + 21);
+    }
+
     const { jobs,
-            getJobs, 
+            getJobs,
+            jobsOnDisplay,
+            setJobsOnDisplay, 
             searchJobs, 
             setSearchJobs, 
             jobLocation, 
@@ -31,8 +37,11 @@ const JobLibrary = (props) => {
                     setFullTime={setFullTime}
         />
         <div className={styles.library__grid}>
-            {jobs.map(renderJobCards)}
+            {jobs.slice(0, jobsOnDisplay).map(renderJobCards)}
         </div>
+        <div className={styles.btnContainer}>
+                <button className={styles.primaryBtn} onClick={renderMoreJobs}>Load More</button>
+            </div>
         </>
     )
 }

@@ -10,7 +10,9 @@ import Login from '../containers/Login';
 const Routes = (props) => {
 
     const { jobs, 
-            getJobs, 
+            getJobs,
+            jobsOnDisplay, 
+            setJobsOnDisplay, 
             searchJobs, 
             setSearchJobs, 
             jobLocation, 
@@ -47,6 +49,7 @@ const Routes = (props) => {
                 checkUserExists={checkUserExists}
                 userEmailError={userEmailError}
                 userPasswordError={userPasswordError}
+                userHasAccount={userHasAccount}
             />
             <Login 
                 path="login"
@@ -65,6 +68,8 @@ const Routes = (props) => {
                 path="job-library" 
                 getJobs={getJobs} 
                 jobs={jobs} 
+                jobsOnDisplay={jobsOnDisplay}
+                setJobsOnDisplay={setJobsOnDisplay}
                 searchJobs={searchJobs} 
                 setSearchJobs={setSearchJobs}
                 jobLocation={jobLocation}

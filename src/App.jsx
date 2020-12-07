@@ -26,6 +26,9 @@ const App = () => {
   const [ jobLocation, setJobLocation ] = useState();
   const [ fullTime, setFullTime ] = useState(false);
 
+  // State change for API pagination
+  const [ jobsOnDisplay, setJobsOnDisplay ] = useState(21);
+
   // State change for user authentication 
   const [ user, setUser ] = useState("");
   const [ firstName, setFirstName ] = useState("");
@@ -147,6 +150,8 @@ const App = () => {
   const renderJobs = jobs 
   ? <Routes jobs={jobs} 
             getJobs={getJobs} 
+            jobsOnDisplay={jobsOnDisplay}
+            setJobsOnDisplay={setJobsOnDisplay}
             searchJobs={searchJobs} 
             setSearchJobs={setSearchJobs} 
             jobLocation={jobLocation}
