@@ -54,7 +54,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     input[type="password"] {
-        background-color: ${props => props.theme.inputText}
+        background-color: ${props => props.theme.inputBg}
     }
 
     ::placeholder {

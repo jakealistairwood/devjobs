@@ -7,6 +7,10 @@
     grid-gap: 1em;
     width: 100%;
     margin-top: 150px;
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 .btnContainer {
