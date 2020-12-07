@@ -15,10 +15,14 @@
     .search__filterOne {
         display: flex;
         align-items: center;
-        width: 60%;
+        width: 40%;
         padding: 10px;
         border-right: 1px solid #e2e6ea;
         height: 100%;
+
+        @media only screen and (max-width: 500px) {
+            width: 80%;
+        }
 
         img {
             padding: 0 20px;
@@ -27,7 +31,7 @@
         input { 
             border: none;
             outline: none;
-            width: 80%;
+            width: 100%;
             height: 30px;
             font-family: $primaryFont;
             z-index: 1000;
