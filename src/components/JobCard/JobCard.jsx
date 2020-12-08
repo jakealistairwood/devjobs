@@ -4,15 +4,15 @@ import { Link } from '@reach/router';
 import  styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from "../../themes";
 
+const StyledCard = styled.div`
+        background-color: ${props => props.theme.cardBg}
+    `
+
 const JobCard = (props) => {
 
     const { job } = props;
 
     const jobID = props.job.id;
-
-    const StyledCard = styled.div`
-        background-color: ${props => props.theme.cardBg}
-    `
 
     return (
             <Link to={`job-description/${jobID}`} job={job} >

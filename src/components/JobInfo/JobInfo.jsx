@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styles from './JobInfo.module.scss';
+import { useParams } from '@reach/router';
 
 const JobInfo = (props) => {
 
-    const [ currentJob, setCurrentJob ] = useState(0);
+    const params = useParams();
 
-    useEffect(() => {
-        setCurrentJob(props.jobID);
-    }, [props.jobID])
+    // const [ currentJob, setCurrentJob ] = useState(0);
 
-    console.log(props.jobID);
+    // useEffect(() => {
+    //     setCurrentJob(props.jobID);
+    // }, [props.jobID])
+
+    // console.log(props.jobID);
+
+    console.log(props);
 
     return (
         <div className={styles.pageContainer}>
@@ -19,7 +24,7 @@ const JobInfo = (props) => {
                 </div>
                 <div className={styles.headerContent}>
                     <div>
-                        <h3>So Digital</h3>
+                        <h3>{params.title}</h3>
                         <p>sodigital.co</p>
                     </div>
                     <button className={styles.secondaryBtn}>Company Site</button>

@@ -149,6 +149,8 @@ const App = () => {
     checkUserExists();
   }, []);
 
+  console.log(user);
+
   const renderJobs = jobs 
   ? <Routes jobs={jobs} 
             getJobs={getJobs} 
@@ -174,7 +176,9 @@ const App = () => {
             userEmailError={userEmailError}
             userPasswordError={userPasswordError}
     /> 
-  : <div className="loadingScreen">Loading ...</div>
+  : <div className="loadingScreen">
+      <h3>Loading ...</h3>
+    </div>
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
