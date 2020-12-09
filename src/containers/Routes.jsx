@@ -2,7 +2,6 @@ import React from 'react';
 import { Router } from '@reach/router';
 import JobInfo from '../components/JobInfo';
 import JobLibrary from '../components/JobLibrary';
-import Home from '../containers/Home';
 import Register from '../containers/Register';
 import Login from '../containers/Login';
 
@@ -35,9 +34,8 @@ const Routes = (props) => {
 
     return (
         <Router>
-            <Home path="/" />
             <Register 
-                path="register"
+                path="/"
                 firstName={firstName}
                 setFirstName={setFirstName}
                 email={email}
