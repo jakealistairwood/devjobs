@@ -30,7 +30,7 @@ const App = () => {
   const [ jobsOnDisplay, setJobsOnDisplay ] = useState(21);
 
   // State change for user authentication 
-  const [ user, setUser ] = useState("");
+  const [ user, setUser ] = useState(null);
   const [ firstName, setFirstName ] = useState("");
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
@@ -52,73 +52,73 @@ const App = () => {
                  User Authentication
   ============================================== */
 
-  // Clear Inputs
+  // // Clear Inputs
 
-  const clearInputs = () => {
-    setEmail('');
-    setPassword('');
-  }
+  // const clearInputs = () => {
+  //   setEmail('');
+  //   setPassword('');
+  // }
 
-  // Clear Errors
+  // // Clear Errors
 
-  const clearErrors = () => {
-    setUserEmailError('');
-    setUserPasswordError('');
-  }
+  // const clearErrors = () => {
+  //   setUserEmailError('');
+  //   setUserPasswordError('');
+  // }
 
-  // Login functionality
-  const handleUserLogin = () => {
-    clearErrors()
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
-      switch(error.code) {
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-          setUserEmailError(error.message);
-          break;
-        case "auth/wrong-password": 
-          setUserPasswordError(error.message);
-          break;
-      }
-    })
-    navigate("/job-library")
-  }
+  // // Login functionality
+  // const handleUserLogin = () => {
+  //   clearErrors()
+  //   firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+  //     switch(error.code) {
+  //       case "auth/invalid-email":
+  //       case "auth/user-disabled":
+  //       case "auth/user-not-found":
+  //         setUserEmailError(error.message);
+  //         break;
+  //       case "auth/wrong-password": 
+  //         setUserPasswordError(error.message);
+  //         break;
+  //     }
+  //   })
+  //   navigate("/job-library")
+  // }
 
-  // Signup functionality 
-  const handleUserSignUp = () => {
-    clearErrors();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(error => {
-      switch(error.code) {
-        case "auth/email-provided-already-in-use":
-        case "auth/email-invalid-try-again":
-          setUserEmailError(error.message);
-          break;
-        case "auth/weak-password": 
-          setUserPasswordError(error.message);
-          break;
-      }  
-    })
-    navigate("/job-library")
-  }
+  // // Signup functionality 
+  // const handleUserSignUp = () => {
+  //   clearErrors();
+  //   firebase.auth().createUserWithEmailAndPassword(email, password).catch(error => {
+  //     switch(error.code) {
+  //       case "auth/email-provided-already-in-use":
+  //       case "auth/email-invalid-try-again":
+  //         setUserEmailError(error.message);
+  //         break;
+  //       case "auth/weak-password": 
+  //         setUserPasswordError(error.message);
+  //         break;
+  //     }  
+  //   })
+  //   navigate("/job-library")
+  // }
 
-  // Logout functionality 
+  // // Logout functionality 
 
-  const handleUserLogOut = () => {
-    firebase.auth().signOut();
-  }
+  // const handleUserLogOut = () => {
+  //   firebase.auth().signOut();
+  // }
 
-  // Check user exists functionality
+  // // Check user exists functionality
 
-  const checkUserExists = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-      } else {
-        setUser("");
-      }
-    })  
-  }
+  // const checkUserExists = () => {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user) {
+  //       clearInputs();
+  //       setUser(user);
+  //     } else {
+  //       setUser("");
+  //     }
+  //   })  
+  // }
 
   /* =============================================
                     Fetch API Data  
@@ -146,10 +146,7 @@ const App = () => {
 
   useEffect(() => {
     getJobs();
-    checkUserExists();
   }, []);
-
-  console.log(user);
 
   const renderJobs = jobs 
   ? <Routes jobs={jobs} 
@@ -162,19 +159,6 @@ const App = () => {
             setJobLocation={setJobLocation}
             fullTime={fullTime}
             setFullTime={setFullTime}
-            firstName={firstName}
-            setFirstName={setFirstName}
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            handleUserLogin={handleUserLogin}
-            handleUserSignUp={handleUserSignUp}
-            checkUserExists={checkUserExists}
-            userHasAccount={userHasAccount}
-            setUserHasAccount={setUserHasAccount}
-            userEmailError={userEmailError}
-            userPasswordError={userPasswordError}
     /> 
   : <div className="loadingScreen">
       <h3>Loading ...</h3>

@@ -17,52 +17,12 @@ const Routes = (props) => {
             setJobLocation,
             fullTime,
             setFullTime,
-            firstName,
-            setFirstName,
-            email,
-            setEmail,
-            password,
-            setPassword,
-            handleUserLogin,
-            handleUserSignUp,
-            checkUserExists,
-            userHasAccount,
-            setUserHasAccount,
-            userEmailError,
-            userPasswordError
         } = props;
 
     return (
         <Router>
-            <Register 
-                path="/"
-                firstName={firstName}
-                setFirstName={setFirstName}
-                email={email}
-                setEmail={setEmail}
-                password={password}
-                setPassword={setPassword} 
-                handleUserSignUp={handleUserSignUp}
-                checkUserExists={checkUserExists}
-                userEmailError={userEmailError}
-                userPasswordError={userPasswordError}
-                userHasAccount={userHasAccount}
-            />
-            <Login 
-                path="login"
-                email={email}
-                setEmail={setEmail}
-                password={password}
-                setPassword={setPassword}
-                handleUserLogin={handleUserLogin}
-                checkUserExists={checkUserExists}
-                userHasAccount={userHasAccount}
-                setUserHasAccount={setUserHasAccount}
-                userEmailError={userEmailError}
-                userPasswordError={userPasswordError} 
-            />
             <JobLibrary 
-                path="job-library" 
+                path="/" 
                 getJobs={getJobs} 
                 jobs={jobs} 
                 jobsOnDisplay={jobsOnDisplay}
@@ -74,7 +34,7 @@ const Routes = (props) => {
                 fullTime={fullTime}
                 setFullTime={setFullTime}
             />
-            <JobInfo path="job-library/job-description/:jobID" jobs={jobs}/>    
+            <JobInfo path="/job-description/:jobID" jobs={jobs}/>    
         </Router>
     )
 }
