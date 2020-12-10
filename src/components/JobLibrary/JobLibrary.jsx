@@ -19,11 +19,13 @@ const JobLibrary = (props) => {
             setJobLocation,
             fullTime,
             setFullTime,
+            currentJob,
+            setCurrentJob
         } = props;
 
 
     const renderJobCards = (job) => (
-        <JobCard job={job} key={job.id} />
+        <JobCard job={job} key={job.id} currentJob={currentJob} setCurrentJob={setCurrentJob} />
     )
 
     return (

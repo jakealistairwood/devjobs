@@ -22,6 +22,7 @@ const App = () => {
 
   // State change for API data inc. search functionality 
   const [ jobs, setJobs ] = useState([]);
+  const [ currentJob, setCurrentJob ] = useState({});
   const [ searchJobs, setSearchJobs ] = useState();
   const [ jobLocation, setJobLocation ] = useState();
   const [ fullTime, setFullTime ] = useState(false);
@@ -31,12 +32,6 @@ const App = () => {
 
   // State change for user authentication 
   const [ user, setUser ] = useState(null);
-  const [ firstName, setFirstName ] = useState("");
-  const [ email, setEmail ] = useState("");
-  const [ password, setPassword ] = useState("");
-  const [ userEmailError, setUserEmailError ] = useState("");
-  const [ userPasswordError, setUserPasswordError ] = useState(""); 
-  const [ userHasAccount, setUserHasAccount ] = useState(false);
 
   // State for light/dark mode toggle button
   const [ isToggled, setIsToggled ] = useState(false);
@@ -159,6 +154,8 @@ const App = () => {
             setJobLocation={setJobLocation}
             fullTime={fullTime}
             setFullTime={setFullTime}
+            currentJob={currentJob}
+            setCurrentJob={setCurrentJob}
     /> 
   : <div className="loadingScreen">
       <h3>Loading ...</h3>

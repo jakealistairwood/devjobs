@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './JobCard.module.scss';
 import { Link } from '@reach/router';
 import  styled, { ThemeProvider } from 'styled-components';
@@ -10,9 +10,18 @@ const StyledCard = styled.div`
 
 const JobCard = (props) => {
 
-    const { job } = props;
+    const { job, currentJob, setCurrentJob } = props;
 
     const jobID = props.job.id;
+
+    // useEffect(() => {
+    //     ;
+    // });
+
+    setCurrentJob(job);
+
+
+
 
     return (
             <Link to={`job-description/${jobID}`} job={job} >

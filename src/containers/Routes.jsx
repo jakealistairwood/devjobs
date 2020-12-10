@@ -2,8 +2,6 @@ import React from 'react';
 import { Router } from '@reach/router';
 import JobInfo from '../components/JobInfo';
 import JobLibrary from '../components/JobLibrary';
-import Register from '../containers/Register';
-import Login from '../containers/Login';
 
 const Routes = (props) => {
 
@@ -17,6 +15,8 @@ const Routes = (props) => {
             setJobLocation,
             fullTime,
             setFullTime,
+            currentJob, 
+            setCurrentJob
         } = props;
 
     return (
@@ -33,8 +33,14 @@ const Routes = (props) => {
                 setJobLocation={setJobLocation}
                 fullTime={fullTime}
                 setFullTime={setFullTime}
+                currentJob={currentJob}
+                setCurrentJob={setCurrentJob}
             />
-            <JobInfo path="/job-description/:jobID" jobs={jobs}/>    
+            <JobInfo 
+                path="/job-description/:jobID" 
+                currentJob={currentJob}
+                setCurrentJob={setCurrentJob}
+            />
         </Router>
     )
 }

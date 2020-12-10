@@ -1,79 +1,63 @@
 import React, { useState, useEffect } from 'react';
 import styles from './JobInfo.module.scss';
-import { useParams } from '@reach/router';
 
 const JobInfo = (props) => {
 
-    const params = useParams();
+    const { jobID, currentJob } = props;
 
-    // const [ currentJob, setCurrentJob ] = useState(0);
-
-    // useEffect(() => {
-    //     setCurrentJob(props.jobID);
-    // }, [props.jobID])
-
-    // console.log(props.jobID);
+    console.log(jobID);
 
     console.log(props);
 
+    console.log(currentJob);
+
     return (
+        <>
         <div className={styles.pageContainer}>
             <header className={styles.jobHeader}>
                 <div className={styles.headerImg}>
-                    <img></img>
+                    <img src={currentJob.company_logo} alt="company-logo" />
                 </div>
                 <div className={styles.headerContent}>
                     <div>
-                        <h3>{params.title}</h3>
-                        <p>sodigital.co</p>
+                        <h3>{currentJob.company}</h3>
+                        <p>{currentJob.company_url}</p>
                     </div>
-                    <button className={styles.secondaryBtn}>Company Site</button>
+                    <a href={currentJob.company_url}>
+                        <button className={styles.secondaryBtn}>Company Site</button>
+                    </a>
                 </div>
             </header>
             <main className={styles.jobDescription}>
                 <section className={styles.overviewHeader}>
                     <div className={styles.overviewHeaderInfo}>
-                        <p>1w ago . Part Time</p>
-                        <h2>Senior Software Engineer</h2>
-                        <p className={styles.jobLocations}>Remote, Seoul, Tokyo, Mountain View, San Francisco</p>
+                        <p>1w ago . {currentJob.type}</p>
+                        <h2>{currentJob.title}</h2>
+                        <p className={styles.jobLocations}>{currentJob.location}</p>
                     </div>
                     <button className={styles.primaryBtn}>Apply Now</button>
                 </section>
                 <section className={styles.overviewContent}>
-                    <p></p>
+                    <div dangerouslySetInnerHTML={{__html: currentJob.description}}></div>
                     <a href="#">See more about our teams here</a>
                 </section> 
-                <section className={styles.jobRequirements}>
-                    <h4>Requirements</h4>
-                    <p></p>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </section>
-                <section className={styles.jobContext}>
-                    <h4>What You Will Do</h4>
-                    <p></p>
-                    <p></p>
-                    <ol>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-                </section>
             </main>
             <aside className={styles.howToApply}>
                 <h3>How to Apply</h3>
-                <p></p>
-                <a href="#"></a>
+                <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facillisis libero dolor a purus. Sed el lacus, Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus.</p>
+                <a href="#">http://examplelink.com/how-to-apply</a>
             </aside>
-            <footer>
-
-            </footer>
         </div>
+        <footer className={styles.footerWrapper}>
+            <div className={styles.footerContent}>
+                <div>
+                    <h3>{currentJob.title}</h3>
+                    <p>{currentJob.company}</p>
+                </div>
+                <button className={styles.primaryBtn}>Apply Now</button>
+            </div>
+        </footer>
+        </>
     )
 }
 
