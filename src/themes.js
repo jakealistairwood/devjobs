@@ -12,7 +12,8 @@ export const lightTheme = {
     inputText: '#000',
     ftLabel: '#000',
     registerLabel: '#000',
-    registerInput: '#000'
+    registerInput: '#000',
+    border: '#E2E6EA'
 }
 
 export const darkTheme = {
@@ -27,7 +28,8 @@ export const darkTheme = {
     inputText: '#FFF',
     ftLabel: '#FFF',
     registerLabel: '#6E8098',
-    registerInput: '#FFF'
+    registerInput: '#FFF',
+    border: '#6E8098'
 }
 
 export const GlobalStyles = createGlobalStyle`
