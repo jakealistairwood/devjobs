@@ -1,5 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import styles from './JobInfo.module.scss';
+import styled from 'styled-components';
+
+const StyledHeader = styled.header`
+    background-color: ${props => props.theme.cardBg}
+`
+const StyledMain = styled.main`
+    background-color: ${props => props.theme.cardBg}    
+`
+const StyledFooter = styled.footer`
+    background-color: ${props => props.theme.cardBg}    
+`
+const StyledH2 = styled.h2`
+    color: ${props => props.theme.headers}
+`
+const StyledH3 = styled.h3`
+    color: white;
+`
 
 const JobInfo = (props) => {
 
@@ -14,7 +31,7 @@ const JobInfo = (props) => {
     return (
         <>
         <div className={styles.pageContainer}>
-            <header className={styles.jobHeader}>
+            <StyledHeader className={styles.jobHeader}>
                 <div className={styles.headerImg}>
                     <img src={currentJob.company_logo} alt="company-logo" />
                 </div>
@@ -27,12 +44,12 @@ const JobInfo = (props) => {
                         <button className={styles.secondaryBtn}>Company Site</button>
                     </a>
                 </div>
-            </header>
-            <main className={styles.jobDescription}>
+            </StyledHeader>
+            <StyledMain className={styles.jobDescription}>
                 <section className={styles.overviewHeader}>
                     <div className={styles.overviewHeaderInfo}>
                         <p>1w ago . {currentJob.type}</p>
-                        <h2>{currentJob.title}</h2>
+                        <StyledH2>{currentJob.title}</StyledH2>
                         <p className={styles.jobLocations}>{currentJob.location}</p>
                     </div>
                     <button className={styles.primaryBtn}>Apply Now</button>
@@ -41,14 +58,14 @@ const JobInfo = (props) => {
                     <div dangerouslySetInnerHTML={{__html: currentJob.description}}></div>
                     <a href="#">See more about our teams here</a>
                 </section> 
-            </main>
+            </StyledMain>
             <aside className={styles.howToApply}>
-                <h3>How to Apply</h3>
+                <StyledH3>How to Apply</StyledH3>
                 <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facillisis libero dolor a purus. Sed el lacus, Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus.</p>
                 <a href="#">http://examplelink.com/how-to-apply</a>
             </aside>
         </div>
-        <footer className={styles.footerWrapper}>
+        <StyledFooter className={styles.footerWrapper}>
             <div className={styles.footerContent}>
                 <div>
                     <h3>{currentJob.title}</h3>
@@ -56,7 +73,7 @@ const JobInfo = (props) => {
                 </div>
                 <button className={styles.primaryBtn}>Apply Now</button>
             </div>
-        </footer>
+        </StyledFooter>
         </>
     )
 }
