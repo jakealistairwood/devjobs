@@ -20,7 +20,9 @@ const StyledH3 = styled.h3`
 
 const JobInfo = (props) => {
 
-    const { jobID, currentJob } = props;
+    const { jobID, currentJob, setCurrentJob } = props;
+
+    setCurrentJob(currentJob);
 
     console.log(jobID);
 

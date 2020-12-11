@@ -10,6 +10,11 @@
         margin: 0 auto;
     }
 
+    @media only screen and (max-width: 1000px) {
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .jobHeader {
         position: absolute;
         top: 11vh;
@@ -24,6 +29,11 @@
             position: absolute;
             width: 80%;
             height: 24vh;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 80%;
+            margin: 0 auto;
         }
     
         .headerImg {
@@ -82,6 +92,10 @@
                         margin-top: 30px;
                         margin-bottom: 10px;
                     }
+
+                    @media only screen and (max-width: 768px) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 p {
@@ -92,6 +106,10 @@
                         text-align: center;
                         margin-bottom: 10px;
                     }
+
+                    @media only screen and (max-width: 768px) {
+                        font-size: 0.7rem;
+                    }
                 }
             }
         }
@@ -99,6 +117,14 @@
             button {
                 @media only screen and (max-width: 500px) {
                     margin-bottom: 20px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    width: 100px;
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    width: 120px;
                 }
             }
         }
