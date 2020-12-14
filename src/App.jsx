@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import JobLibrary from './components/JobLibrary/index';
 import Routes from './containers/Routes';
 import { Link, navigate }from '@reach/router';
-import firebase from './firebase';
+import firebase, { provider } from './firebase';
 import NavbarBanner from './assets/design/Desktop/bg-pattern-header.svg';
 import Logo from './assets/design/Desktop/logo.svg';
 import './App.scss';
@@ -12,6 +12,10 @@ import Switch from './components/Switch';
 
 // Styled Component 
 const StyledApp = styled.div`
+`
+
+const StyledH2 = styled.h2`
+  color: ${props => props.theme.headers}
 `
 
 const App = () => {
@@ -37,7 +41,7 @@ const App = () => {
   const [ isToggled, setIsToggled ] = useState(false);
 
   // State for setting light/dark mode theme
-  const [theme, setTheme] = useState("light");
+  const [ theme, setTheme ] = useState("light");
 
   const toggleTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -47,62 +51,13 @@ const App = () => {
                  User Authentication
   ============================================== */
 
-  // // Clear Inputs
-
-  // const clearInputs = () => {
-  //   setEmail('');
-  //   setPassword('');
+  // const googleSignIn = () => {
+  //   firebase.auth().signInWithRedirect(provider);
   // }
-
-  // // Clear Errors
-
-  // const clearErrors = () => {
-  //   setUserEmailError('');
-  //   setUserPasswordError('');
-  // }
-
-  // // Login functionality
-  // const handleUserLogin = () => {
-  //   clearErrors()
-  //   firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
-  //     switch(error.code) {
-  //       case "auth/invalid-email":
-  //       case "auth/user-disabled":
-  //       case "auth/user-not-found":
-  //         setUserEmailError(error.message);
-  //         break;
-  //       case "auth/wrong-password": 
-  //         setUserPasswordError(error.message);
-  //         break;
-  //     }
-  //   })
-  //   navigate("/job-library")
-  // }
-
-  // // Signup functionality 
-  // const handleUserSignUp = () => {
-  //   clearErrors();
-  //   firebase.auth().createUserWithEmailAndPassword(email, password).catch(error => {
-  //     switch(error.code) {
-  //       case "auth/email-provided-already-in-use":
-  //       case "auth/email-invalid-try-again":
-  //         setUserEmailError(error.message);
-  //         break;
-  //       case "auth/weak-password": 
-  //         setUserPasswordError(error.message);
-  //         break;
-  //     }  
-  //   })
-  //   navigate("/job-library")
-  // }
-
-  // // Logout functionality 
 
   // const handleUserLogOut = () => {
   //   firebase.auth().signOut();
   // }
-
-  // // Check user exists functionality
 
   // const checkUserExists = () => {
   //   firebase.auth().onAuthStateChanged(user => {
@@ -118,6 +73,7 @@ const App = () => {
   /* =============================================
                     Fetch API Data  
   ============================================== */
+
   // Get API Data functionality
   const getJobs = () => {
 
